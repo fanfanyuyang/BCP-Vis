@@ -508,14 +508,21 @@ natural next step and is stated as a limitation, not glossed over.
 @misc{bcpvis2026,
   title  = {BCP-Vis: A Learned Background Confidence Prior for Tiny-Vehicle Segmentation
             in High-Altitude UAV Imagery},
-  author = {<your name>},
+  author = {fanfanyuyang},
   year   = {2026},
   note   = {Code and experimental record},
-  url    = {https://github.com/<your-account>/BCP-Vis}
+  url    = {https://github.com/fanfanyuyang/BCP-Vis}
+}
+
+@article{sun2024evd4uav,
+  title   = {EVD4UAV: An Altitude-Sensitive Benchmark to Evade Vehicle Detection in UAV},
+  author  = {Sun, Huiming and Guo, Jiacheng and Meng, Zibo and Zhang, Tianyun and Fang, Jianwu and Lin, Yuewei and Yu, Hongkai},
+  journal = {arXiv preprint arXiv:2403.05422},
+  year    = {2024}
 }
 ```
 
-> **Before submitting the associated paper:** add the EVD4UAV dataset citation requested by its authors.
+> **Dataset:** EVD4UAV is used under CC-BY 4.0; cite `sun2024evd4uav` above as requested by its authors.
 
 ## 13. License and Acknowledgements
 
