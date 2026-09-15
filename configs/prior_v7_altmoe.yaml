@@ -1,0 +1,26 @@
+name: prior_v7_altmoe
+exp: V7
+proc: datasets/EVD4UAV_processed
+raw:  datasets/EVD4UAV/raw/EVD4UAV
+out_dir: runs/priornet
+model:
+  arch: alt_moe
+  c2: 32
+  c4: 64
+  c8: 128
+  fuse: 64
+  emb_dim: 64
+  n_experts: 3
+  expert_dim: 32
+loss:
+  main: focal
+  focal_alpha: 0.25
+  focal_gamma: 2.0
+  lambda_dice: 1.0
+  lambda_balance: 0.01
+epochs: 40
+batch_size: 16
+lr: 1.0e-4
+amp: true
+augment: true
+seed: 42

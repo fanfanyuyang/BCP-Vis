@@ -1,0 +1,27 @@
+name: prior_v5_cat
+exp: E14
+proc: datasets/EVD4UAV_processed
+raw:  datasets/EVD4UAV/raw/EVD4UAV
+out_dir: runs/priornet
+model:
+  arch: cat_bg
+  c2: 32
+  c4: 64
+  c8: 128
+  fuse: 64
+  bg_dim: 32
+  emb_dim: 32
+loss:
+  main: focal
+  focal_alpha: 0.25
+  focal_gamma: 2.0
+  lambda_dice: 1.0
+  lambda_bg: 1.0
+  lambda_cls: 0.5
+class_aware: true
+epochs: 40
+batch_size: 16
+lr: 1.0e-4
+amp: true
+augment: true
+seed: 42

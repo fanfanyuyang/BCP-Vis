@@ -1,0 +1,14 @@
+# Core
+torch>=2.1
+torchvision>=0.16
+numpy>=1.24
+
+# Data / image IO
+opencv-python>=4.8
+Pillow>=10.0
+scipy>=1.10
+PyYAML>=6.0
+pandas>=2.0
+
+# Optional: FLOPs accounting for tools/bench_gpu_step.py
+# fvcore>=0.1.5

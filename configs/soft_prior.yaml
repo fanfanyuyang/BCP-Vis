@@ -1,0 +1,6 @@
+mask_dir: datasets/EVD4UAV_processed/binary_masks
+out_dir:  datasets/EVD4UAV_processed/soft_priors
+sigma: 32.0
+sigma_candidates: [8, 16, 24, 32, 48, 64]
+n_vis: 20
+seed: 42

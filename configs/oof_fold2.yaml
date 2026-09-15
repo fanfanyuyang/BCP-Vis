@@ -1,0 +1,31 @@
+amp: true
+augment: true
+batch_size: 16
+epochs: 40
+exp: V8
+loss:
+  focal_alpha: 0.25
+  focal_gamma: 2.0
+  lambda_balance: 0.01
+  lambda_bg: 1.0
+  lambda_dice: 1.0
+  main: focal
+lr: 0.0001
+model:
+  alt_expert_dim: 32
+  arch: cascade
+  bg_dim: 32
+  c2: 32
+  c4: 64
+  c8: 128
+  emb_dim: 64
+  fuse: 64
+  height_mode: moe
+  n_alt_experts: 3
+  n_bg_experts: 1
+name: oof_fold2
+out_dir: /root/autodl-tmp/BCP-Vis/datasets/EVD4UAV_processed/oof_folds
+patch_manifest: patch_manifest_fold2.csv
+proc: datasets/EVD4UAV_processed
+raw: datasets/EVD4UAV/raw/EVD4UAV
+seed: 42

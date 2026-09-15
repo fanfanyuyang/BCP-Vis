@@ -1,0 +1,64 @@
+<svg viewBox="0 0 680 310" width="100%" xmlns="http://www.w3.org/2000/svg" role="img">
+<title>BCP-Vis 两阶段流水线</title>
+<desc>Stage 1：RGB 图像经 Lite-HR PriorNet 生成 soft prior P；Stage 2：P 与 RGB 拼接为 4 通道 RGBP，输入 ResNet18-UNet 得到前景掩膜。</desc>
+<defs>
+<marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+<path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</marker>
+</defs>
+
+<g>
+<rect x="40" y="44" width="140" height="56" rx="8" fill="#F1EFE8" stroke="#888780" stroke-width="0.5"/>
+<text x="110" y="66" text-anchor="middle" dominant-baseline="central" font-family="system-ui,sans-serif" font-size="14" font-weight="500" fill="#2C2C2A">RGB image I</text>
+<text x="110" y="85" text-anchor="middle" dominant-baseline="central" font-family="system-ui,sans-serif" font-size="12" fill="#5F5E5A">3 x H x W</text>
+</g>
+
+<g>
+<rect x="220" y="44" width="170" height="56" rx="8" fill="#EEEDFE" stroke="#534AB7" stroke-width="0.5"/>
+<text x="305" y="66" text-anchor="middle" dominant-baseline="central" font-family="system-ui,sans-serif" font-size="14" font-weight="500" fill="#3C3489">PriorNet G_theta</text>
+<text x="305" y="85" text-anchor="middle" dominant-baseline="central" font-family="system-ui,sans-serif" font-size="12" fill="#534AB7">Lite-HR, 0.08 M</text>
+</g>
+
+<g>
+<rect x="430" y="44" width="210" height="56" rx="8" fill="#EEEDFE" stroke="#534AB7" stroke-width="0.5"/>
+<text x="535" y="66" text-anchor="middle" dominant-baseline="central" font-family="system-ui,sans-serif" font-size="14" font-weight="500" fill="#3C3489">Soft prior P</text>
+<text x="535" y="85" text-anchor="middle" dominant-baseline="central" font-family="system-ui,sans-serif" font-size="12" fill="#534AB7">P = sigmoid(G_theta(I)) in [0,1]</text>
+</g>
+
+<path d="M180 72 L214 72" fill="none" stroke="#888780" stroke-width="1.5" marker-end="url(#arrow)"/>
+<path d="M390 72 L424 72" fill="none" stroke="#888780" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+<text x="305" y="120" text-anchor="middle" font-family="system-ui,sans-serif" font-size="12" fill="#5F5E5A">L_prior = L_focal + lambda_dice * L_dice</text>
+
+<path d="M40 148 L640 148" fill="none" stroke="#B4B2A9" stroke-width="0.5" stroke-dasharray="4 4"/>
+<text x="640" y="138" text-anchor="end" font-family="system-ui,sans-serif" font-size="12" fill="#888780">Stage 1 - prior</text>
+<text x="640" y="176" text-anchor="end" font-family="system-ui,sans-serif" font-size="12" fill="#888780">Stage 2 - segmentation</text>
+
+<path d="M110 100 L110 181" fill="none" stroke="#888780" stroke-width="1.5" marker-end="url(#arrow)"/>
+<path d="M535 100 L535 168 L215 168 L215 181" fill="none" stroke="#534AB7" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+<g>
+<rect x="40" y="185" width="190" height="56" rx="8" fill="#F1EFE8" stroke="#888780" stroke-width="0.5"/>
+<text x="135" y="207" text-anchor="middle" dominant-baseline="central" font-family="system-ui,sans-serif" font-size="14" font-weight="500" fill="#2C2C2A">I_RGBP = [I ; P]</text>
+<text x="135" y="226" text-anchor="middle" dominant-baseline="central" font-family="system-ui,sans-serif" font-size="12" fill="#5F5E5A">4 x H x W</text>
+</g>
+
+<g>
+<rect x="270" y="185" width="200" height="56" rx="8" fill="#E1F5EE" stroke="#0F6E56" stroke-width="0.5"/>
+<text x="370" y="207" text-anchor="middle" dominant-baseline="central" font-family="system-ui,sans-serif" font-size="14" font-weight="500" fill="#085041">Final CNN F_phi</text>
+<text x="370" y="226" text-anchor="middle" dominant-baseline="central" font-family="system-ui,sans-serif" font-size="12" fill="#0F6E56">ResNet18-UNet, 14.8 M</text>
+</g>
+
+<g>
+<rect x="510" y="185" width="130" height="56" rx="8" fill="#E1F5EE" stroke="#0F6E56" stroke-width="0.5"/>
+<text x="575" y="207" text-anchor="middle" dominant-baseline="central" font-family="system-ui,sans-serif" font-size="14" font-weight="500" fill="#085041">Y_hat</text>
+<text x="575" y="226" text-anchor="middle" dominant-baseline="central" font-family="system-ui,sans-serif" font-size="12" fill="#0F6E56">foreground mask</text>
+</g>
+
+<path d="M230 213 L264 213" fill="none" stroke="#888780" stroke-width="1.5" marker-end="url(#arrow)"/>
+<path d="M470 213 L504 213" fill="none" stroke="#888780" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+<text x="370" y="261" text-anchor="middle" font-family="system-ui,sans-serif" font-size="12" fill="#5F5E5A">L_final identical to RGB baseline (only C: 3 to 4)</text>
+
+<text x="340" y="290" text-anchor="middle" font-family="system-ui,sans-serif" font-size="12" fill="#993C1D">4th channel from PriorNet only; GT mask = Oracle upper bound (E7)</text>
+</svg>

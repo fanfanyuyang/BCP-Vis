@@ -1,0 +1,21 @@
+name: E0_rgb_baseline
+exp: E0
+proc: datasets/EVD4UAV_processed
+raw:  datasets/EVD4UAV/raw/EVD4UAV
+out_dir: runs/rgb_baseline
+model:
+  arch: resnet18_unet
+  in_channels: 3
+  pretrained: true
+loss:
+  main: focal
+  lambda_dice: 1.0
+  focal_alpha: 0.25
+  focal_gamma: 2.0
+epochs: 40
+batch_size: 8
+lr: 1.0e-4
+weight_decay: 1.0e-4
+amp: true
+augment: true
+seed: 42

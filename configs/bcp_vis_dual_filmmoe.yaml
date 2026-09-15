@@ -1,0 +1,24 @@
+name: E28_filmmoe
+exp: E28
+proc: datasets/EVD4UAV_processed
+raw:  datasets/EVD4UAV/raw/EVD4UAV
+out_dir: runs/bcp_vis
+prior_dir: datasets/EVD4UAV_processed/priors_v8_film
+prior_dir2: datasets/EVD4UAV_processed/priors_v8
+model:
+  arch: resnet18_unet
+  in_channels: 5
+  pretrained: true
+  init_prior: mean
+loss:
+  main: focal
+  lambda_dice: 1.0
+  focal_alpha: 0.25
+  focal_gamma: 2.0
+epochs: 40
+batch_size: 16
+lr: 1.0e-4
+weight_decay: 1.0e-4
+amp: true
+augment: true
+seed: 42

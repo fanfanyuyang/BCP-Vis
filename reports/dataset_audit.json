@@ -1,0 +1,370 @@
+{
+  "root": "/root/autodl-tmp/BCP-Vis/datasets/EVD4UAV/raw/EVD4UAV",
+  "audit_mode": "READ_ONLY",
+  "note": "本脚本不修改任何原始数据",
+  "tree": {
+    "n_files": 28795,
+    "total_bytes": 8438458543,
+    "ext_counter": {
+      ".txt": 18740,
+      ".jpg": 10049,
+      ".png": 2,
+      ".xml": 1,
+      ".md": 1,
+      ".json": 1,
+      ".jsonl": 1
+    },
+    "dir_counter": {
+      "images": 10051,
+      "bb": 9369,
+      "rotated_bb": 9369,
+      ".": 4,
+      "figures": 2
+    },
+    "samples_by_ext": {
+      ".xml": [
+        "mask_attribute.xml"
+      ],
+      ".md": [
+        "README.md"
+      ],
+      ".txt": [
+        "train.txt",
+        "val.txt",
+        "bb/DJI_0157.txt",
+        "bb/DJI_0158.txt",
+        "bb/DJI_0159.txt"
+      ],
+      ".png": [
+        "figures/dataset_comparsion.png",
+        "figures/visualization_example.png"
+      ],
+      ".jpg": [
+        "images/DJI_0157.jpg",
+        "images/DJI_0158.jpg",
+        "images/DJI_0159.jpg",
+        "images/DJI_0160.jpg",
+        "images/DJI_0161.jpg"
+      ],
+      ".json": [
+        "images/index.json"
+      ],
+      ".jsonl": [
+        "images/manifest.jsonl"
+      ]
+    },
+    "empty_files": [],
+    "n_empty_files": 0
+  },
+  "n_images": 10051,
+  "image_dirs": {
+    "images": 10049,
+    "figures": 2
+  },
+  "image_stats": {
+    "probed": 2000,
+    "size_histogram": {
+      "1920x1080": 1998,
+      "1598x313": 1,
+      "2895x1635": 1
+    },
+    "corrupt_sample": [],
+    "n_corrupt_in_sample": 0,
+    "bad_magic_sample": [],
+    "n_bad_magic_in_sample": 0,
+    "verify_sample": true
+  },
+  "n_json": 1,
+  "json_probes": [
+    {
+      "path": "images/index.json",
+      "size_bytes": 87240,
+      "kind": "generic_dict",
+      "top_level_keys": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9",
+        "10",
+        "11",
+        "12",
+        "13",
+        "14",
+        "15",
+        "16",
+        "17",
+        "18",
+        "19"
+      ],
+      "n_top_level_keys": 6392,
+      "coco_markers": {
+        "images": false,
+        "annotations": false,
+        "categories": false
+      }
+    }
+  ],
+  "n_txt": 18740,
+  "txt_probes": [
+    {
+      "path": "train.txt",
+      "size_bytes": 109583,
+      "sample_lines": [
+        "DJI_0394_0",
+        "DJI_0436_frame_302",
+        "DJI_0389_683",
+        "DJI_0402_19",
+        "DJI_0452_frame_50"
+      ],
+      "kind": "text_other"
+    },
+    {
+      "path": "val.txt",
+      "size_bytes": 27552,
+      "sample_lines": [
+        "DJI_0450_frame_88",
+        "DJI_0394_348",
+        "DJI_0452_frame_254",
+        "DJI_0436_frame_163",
+        "DJI_0383_742"
+      ],
+      "kind": "text_other"
+    },
+    {
+      "path": "bb/DJI_0157.txt",
+      "size_bytes": 194,
+      "sample_lines": [
+        "0 1498 703 1625 840",
+        "0 1463 195 1580 322",
+        "0 881 684 1008 820",
+        "0 864 463 981 589",
+        "0 1010 671 1139 810"
+      ],
+      "kind": "yolo_like_or_numeric",
+      "n_tokens_first_line": 5
+    },
+    {
+      "path": "bb/DJI_0158.txt",
+      "size_bytes": 151,
+      "sample_lines": [
+        "0 189 418 263 482",
+        "0 1091 510 1209 628",
+        "0 997 589 1125 718",
+        "0 386 181 527 314",
+        "0 283 285 416 412"
+      ],
+      "kind": "yolo_like_or_numeric",
+      "n_tokens_first_line": 5
+    },
+    {
+      "path": "bb/DJI_0159.txt",
+      "size_bytes": 224,
+      "sample_lines": [
+        "0 123 622 277 701",
+        "0 816 571 922 709",
+        "0 1520 183 1605 298",
+        "0 592 35 728 87",
+        "0 652 2 776 29"
+      ],
+      "kind": "yolo_like_or_numeric",
+      "n_tokens_first_line": 5
+    },
+    {
+      "path": "bb/DJI_0160.txt",
+      "size_bytes": 230,
+      "sample_lines": [
+        "0 1569 331 1629 429",
+        "0 1450 516 1506 613",
+        "0 1273 391 1328 470",
+        "0 1429 169 1497 258",
+        "0 761 987 805 1055"
+      ],
+      "kind": "yolo_like_or_numeric",
+      "n_tokens_first_line": 5
+    },
+    {
+      "path": "bb/DJI_0161.txt",
+      "size_bytes": 237,
+      "sample_lines": [
+        "2 1241 328 1285 367",
+        "0 1592 578 1667 686",
+        "0 1584 740 1649 847",
+        "0 1701 663 1788 804",
+        "0 1725 423 1792 527"
+      ],
+      "kind": "yolo_like_or_numeric",
+      "n_tokens_first_line": 5
+    },
+    {
+      "path": "bb/DJI_0162.txt",
+      "size_bytes": 198,
+      "sample_lines": [
+        "0 1636 0 1726 91",
+        "0 1521 510 1603 626",
+        "0 1136 384 1199 471",
+        "0 1494 679 1557 776",
+        "0 1562 362 1630 461"
+      ],
+      "kind": "yolo_like_or_numeric",
+      "n_tokens_first_line": 5
+    },
+    {
+      "path": "bb/DJI_0163.txt",
+      "size_bytes": 261,
+      "sample_lines": [
+        "0 1088 682 1153 803",
+        "0 1204 372 1343 423",
+        "0 623 475 762 519",
+        "0 1834 856 1919 974",
+        "0 784 399 925 437"
+      ],
+      "kind": "yolo_like_or_numeric",
+      "n_tokens_first_line": 5
+    },
+    {
+      "path": "bb/DJI_0164.txt",
+      "size_bytes": 442,
+      "sample_lines": [
+        "0 0 0 91 54",
+        "0 1727 339 1861 389",
+        "0 563 127 690 253",
+        "0 259 138 396 284",
+        "0 1138 107 1237 225"
+      ],
+      "kind": "yolo_like_or_numeric",
+      "n_tokens_first_line": 5
+    },
+    {
+      "path": "bb/DJI_0165.txt",
+      "size_bytes": 881,
+      "sample_lines": [
+        "0 268 299 384 429",
+        "0 366 288 483 417",
+        "0 371 508 506 658",
+        "0 510 810 675 973",
+        "0 539 512 659 646"
+      ],
+      "kind": "yolo_like_or_numeric",
+      "n_tokens_first_line": 5
+    },
+    {
+      "path": "bb/DJI_0166.txt",
+      "size_bytes": 224,
+      "sample_lines": [
+        "0 770 380 917 440",
+        "0 378 100 514 143",
+        "0 536 78 683 133",
+        "0 601 325 736 421",
+        "0 699 73 839 121"
+      ],
+      "kind": "yolo_like_or_numeric",
+      "n_tokens_first_line": 5
+    },
+    {
+      "path": "bb/DJI_0167.txt",
+      "size_bytes": 96,
+      "sample_lines": [
+        "0 1007 373 1070 406",
+        "0 608 606 663 697",
+        "0 1137 562 1179 649",
+        "0 1273 433 1334 527",
+        "0 669 586 721 677"
+      ],
+      "kind": "yolo_like_or_numeric",
+      "n_tokens_first_line": 5
+    },
+    {
+      "path": "bb/DJI_0168.txt",
+      "size_bytes": 326,
+      "sample_lines": [
+        "0 1545 667 1672 787",
+        "0 1800 650 1920 764",
+        "0 1718 657 1849 777",
+        "0 1462 675 1586 794",
+        "0 424 605 570 654"
+      ],
+      "kind": "yolo_like_or_numeric",
+      "n_tokens_first_line": 5
+    },
+    {
+      "path": "bb/DJI_0169.txt",
+      "size_bytes": 480,
+      "sample_lines": [
+        "0 197 388 335 470",
+        "0 1087 572 1218 653",
+        "0 1299 36 1426 148",
+        "0 848 200 930 313",
+        "0 62 328 195 389"
+      ],
+      "kind": "yolo_like_or_numeric",
+      "n_tokens_first_line": 5
+    }
+  ],
+  "n_xml": 1,
+  "mask_dir_hints": {},
+  "official_metadata": {
+    "dir": "/root/autodl-tmp/BCP-Vis/datasets/EVD4UAV/_official_metadata",
+    "files": {
+      "altitude_mapping": {
+        "path": "/root/autodl-tmp/BCP-Vis/datasets/EVD4UAV/_official_metadata/altitude_mapping.txt",
+        "n_entries": 10048,
+        "n_malformed_lines": 0,
+        "altitude_distribution": {
+          "90m": 3750,
+          "70m": 3231,
+          "50m": 3067
+        },
+        "key_format": "image stem without extension  ->  altitude",
+        "sample": {
+          "DJI_0157": "50m",
+          "DJI_0158": "50m",
+          "DJI_0159": "70m",
+          "DJI_0160": "70m",
+          "DJI_0161": "70m"
+        }
+      },
+      "snow_images.txt": {
+        "path": "/root/autodl-tmp/BCP-Vis/datasets/EVD4UAV/_official_metadata/snow_images.txt",
+        "n_entries": 3657,
+        "n_unique": 3657,
+        "sample": [
+          "DJI_0436_frame_0.jpg",
+          "DJI_0436_frame_1.jpg",
+          "DJI_0436_frame_10.jpg",
+          "DJI_0436_frame_100.jpg",
+          "DJI_0436_frame_101.jpg"
+        ]
+      },
+      "non_snow_images.txt": {
+        "path": "/root/autodl-tmp/BCP-Vis/datasets/EVD4UAV/_official_metadata/non_snow_images.txt",
+        "n_entries": 6392,
+        "n_unique": 6392,
+        "sample": [
+          "DJI_0157.jpg",
+          "DJI_0158.jpg",
+          "DJI_0159.jpg",
+          "DJI_0160.jpg",
+          "DJI_0161.jpg"
+        ]
+      }
+    },
+    "status": "OK"
+  },
+  "altitude_join": {
+    "join_rule": "image stem == altitude_mapping key",
+    "n_images": 10051,
+    "n_matched": 10048,
+    "n_unmatched": 3,
+    "unmatched_sample": [
+      "dataset_comparsion.png",
+      "visualization_example.png",
+      "DJI_0374_0.jpg"
+    ]
+  }
+}
