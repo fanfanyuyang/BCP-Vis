@@ -201,8 +201,7 @@ BCP-Vis/
 ```
 
 > **Note on paths.** Every absolute server path that appeared in the original
-> development scripts and configs (e.g. `/root/autodl-tmp/...`,
-> `/root/miniconda3/...`) has been replaced with the portable placeholders
+> development scripts and configs has been replaced with the portable placeholders
 > `<PROJECT_ROOT>` and `<CONDA_ROOT>`. Point these at your own environment
 > before running the `pipelines/` and `scripts/` launchers; the core
 > `train/`/`eval/`/`models/` code is environment-agnostic and needs no change.
