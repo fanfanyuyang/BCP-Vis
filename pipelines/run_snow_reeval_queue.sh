@@ -2,10 +2,10 @@
 # 雪控制重评：对关键既有实验用"新增 by_size_snow 分组"的 eval 重评，
 # 以便把"高度效应"与"雪效应"解耦（by_size_snow 只对补丁之后的评测生效）。
 # 等 E29 完成后接手，串行不抢卡。只读 ckpt、幂等（同 tag 覆盖旧行）。
-cd /root/autodl-tmp/BCP-Vis
+cd "<PROJECT_ROOT>"
 exec 200>/tmp/bcp_snow.lock
 flock -n 200 || { echo "snow reeval 已在运行，退出"; exit 0; }
-source /root/miniconda3/etc/profile.d/conda.sh
+source "<CONDA_ROOT>/etc/profile.d/conda.sh"
 conda activate base
 LOG=logs/snow_reeval_queue.log
 PROC=datasets/EVD4UAV_processed

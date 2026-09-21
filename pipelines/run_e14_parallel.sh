@@ -4,9 +4,9 @@
 # 与主线 e11→e12→e13 完全独立（E14 是链上最后一个实验），
 # 故可现在并行启动以占满空闲的 GPU 显存 / CPU / 内存。
 # 不等待 e13_queue.done；结果写到标准路径，供链上 run_e14_queue.sh 幂等跳过。
-cd /root/autodl-tmp/BCP-Vis
+cd "<PROJECT_ROOT>"
 trap 'rm -f logs/e14_parallel.active' EXIT
-source /root/miniconda3/etc/profile.d/conda.sh
+source "<CONDA_ROOT>/etc/profile.d/conda.sh"
 conda activate base
 PROC=datasets/EVD4UAV_processed
 RAW=datasets/EVD4UAV/raw/EVD4UAV

@@ -1,10 +1,10 @@
 #!/bin/bash
 # E31：E12（V8 级联/moe）的 seed43 复制，用于论文方差。等 E30 完成后接手。
 # 完整流程：PriorNet(seed43) -> 推理(默认 mul，λ_bg=1 背景头已训) -> 下游(seed43) -> 评测。
-cd /root/autodl-tmp/BCP-Vis
+cd "<PROJECT_ROOT>"
 exec 200>/tmp/bcp_e31.lock
 flock -n 200 || { echo "E31 已在运行，退出"; exit 0; }
-source /root/miniconda3/etc/profile.d/conda.sh
+source "<CONDA_ROOT>/etc/profile.d/conda.sh"
 conda activate base
 LOG=logs/e31_queue.log
 echo "[$(date)] E31(E12 seed43 方差) 队列启动，等 logs/e30_queue.done" >> "$LOG"

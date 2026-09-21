@@ -1,14 +1,14 @@
 #!/bin/bash
 # 扩容重启后续跑：E17(logit 融合) -> E19(一致性正则) -> E20(双先验通道)
 # 断点续跑：E17 若先验不全则补推理；各步产物存在才写 done（防假完成）
-cd /root/autodl-tmp/BCP-Vis
+cd "<PROJECT_ROOT>"
 exec 200>/tmp/bcp_resume.lock
 flock -n 200 || { echo "resume 队列已在运行，退出"; exit 0; }
-source /root/miniconda3/etc/profile.d/conda.sh
+source "<CONDA_ROOT>/etc/profile.d/conda.sh"
 conda activate base
 LOG=logs/resume_queue.log
 echo "[$(date)] ===== resume 队列启动（E17/E19/E20）=====" >> "$LOG"
-df -h /root/autodl-tmp >> "$LOG" 2>&1
+df -h <PROJECT_ROOT> >> "$LOG" 2>&1
 
 PROC=datasets/EVD4UAV_processed
 RAW=datasets/EVD4UAV/raw/EVD4UAV

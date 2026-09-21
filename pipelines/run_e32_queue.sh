@@ -1,9 +1,9 @@
 #!/bin/bash
 # E32：E24（V8 级联 + FiLM）的 seed43 复制，用于论文方差。等 E31 完成后接手。
-cd /root/autodl-tmp/BCP-Vis
+cd "<PROJECT_ROOT>"
 exec 200>/tmp/bcp_e32.lock
 flock -n 200 || { echo "E32 已在运行，退出"; exit 0; }
-source /root/miniconda3/etc/profile.d/conda.sh
+source "<CONDA_ROOT>/etc/profile.d/conda.sh"
 conda activate base
 LOG=logs/e32_queue.log
 echo "[$(date)] E32(E24 seed43 方差) 队列启动，等 logs/e31_queue.done" >> "$LOG"

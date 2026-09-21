@@ -4,10 +4,10 @@
 #   Step A: 4 折 cascade PriorNet OOF 先验（uap 组合，仅 train）
 #   Step B: val/test 用 E12 全量 cascade ckpt 推理（uap，本就 OOF）
 #   Step C: 用 E13 ckpt 在 OOF uap 先验上评测 -> E15
-cd /root/autodl-tmp/BCP-Vis
+cd "<PROJECT_ROOT>"
 exec 200>/tmp/bcp_e15.lock
 flock -n 200 || { echo "E15 已在运行，退出"; exit 0; }
-source /root/miniconda3/etc/profile.d/conda.sh
+source "<CONDA_ROOT>/etc/profile.d/conda.sh"
 conda activate base
 LOG=logs/e15_queue.log
 echo "[$(date)] E15 队列启动，等 logs/e13_queue.done" >> "$LOG"

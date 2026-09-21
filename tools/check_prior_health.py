@@ -4,7 +4,7 @@ import csv
 import numpy as np
 import cv2
 
-PROC = "/root/autodl-tmp/BCP-Vis/datasets/EVD4UAV_processed"
+PROC = "<PROJECT_ROOT>/datasets/EVD4UAV_processed"
 GT = os.path.join(PROC, "binary_masks")
 
 rows = [r for r in csv.DictReader(open(os.path.join(PROC, "patch_manifest.csv"), encoding="utf-8"))

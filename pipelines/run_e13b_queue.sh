@@ -3,10 +3,10 @@
 #   Step1: 独立先验 UAP 推理 -> priors_uap_indep (cascade fg + litehr 独立 fg)
 #   Step2: 训练最终 CNN E13b（在独立先验上）
 #   Step3: 评测 -> E13b 行
-cd /root/autodl-tmp/BCP-Vis
+cd "<PROJECT_ROOT>"
 exec 200>/tmp/bcp_e13b.lock
 flock -n 200 || { echo "E13b 已在运行，退出"; exit 0; }
-source /root/miniconda3/etc/profile.d/conda.sh
+source "<CONDA_ROOT>/etc/profile.d/conda.sh"
 conda activate base
 LOG=logs/e13b_queue.log
 echo "[$(date)] E13b 开始（修正版 UAP：独立先验=litehr）" >> "$LOG"

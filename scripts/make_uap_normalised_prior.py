@@ -3,7 +3,7 @@ import os
 import numpy as np
 import cv2
 
-PROC = "/root/autodl-tmp/BCP-Vis/datasets/EVD4UAV_processed"
+PROC = "<PROJECT_ROOT>/datasets/EVD4UAV_processed"
 SRC_A = os.path.join(PROC, "priors_v4")
 SRC_B = os.path.join(PROC, "priors_v8")
 OUT = os.path.join(PROC, "priors_v33_du")

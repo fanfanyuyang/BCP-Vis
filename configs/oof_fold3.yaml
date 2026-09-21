@@ -24,7 +24,7 @@ model:
   n_alt_experts: 3
   n_bg_experts: 1
 name: oof_fold3
-out_dir: /root/autodl-tmp/BCP-Vis/datasets/EVD4UAV_processed/oof_folds
+out_dir: <PROJECT_ROOT>/datasets/EVD4UAV_processed/oof_folds
 patch_manifest: patch_manifest_fold3.csv
 proc: datasets/EVD4UAV_processed
 raw: datasets/EVD4UAV/raw/EVD4UAV

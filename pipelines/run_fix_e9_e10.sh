@@ -2,10 +2,10 @@
 # 修复补跑：V5-B(MoE) 与 Large-Plain 的训练其实已完成，
 # 失败的是【推理先验】这一步（infer_prior 用默认维度建模型导致 shape 不匹配，已修）。
 # 本脚本跳过训练，直接从已有 ckpt 重做推理 -> 训 E9/E10 -> 评估。
-cd /root/autodl-tmp/BCP-Vis
+cd "<PROJECT_ROOT>"
 exec 200>/tmp/bcp_fix.lock
 flock -n 200 || { echo "fix queue already running, exit"; exit 0; }
-source /root/miniconda3/etc/profile.d/conda.sh
+source "<CONDA_ROOT>/etc/profile.d/conda.sh"
 conda activate base
 
 PROC=datasets/EVD4UAV_processed

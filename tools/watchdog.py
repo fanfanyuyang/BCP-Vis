@@ -110,7 +110,7 @@ def main():
             alive = chains_alive()
             rows = exp_progress(root)
             pend = pending(rows)
-            disk = sh("df -h /root/autodl-tmp | tail -1")
+            disk = sh("df -h <PROJECT_ROOT> | tail -1")
             gpu = sh("nvidia-smi --query-gpu=utilization.gpu,memory.used,"
                      "power.draw --format=csv,noheader")
             nprior = sh("ls %s/datasets/EVD4UAV_processed/oof_priors/*.png 2>/dev/null "

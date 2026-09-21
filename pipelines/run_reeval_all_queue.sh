@@ -2,10 +2,10 @@
 # 修复 eval_final 的 BatchNorm 污染 bug 后，**全量重评**所有既有实验。
 # 该 bug 让所有评测值被系统性低估（实测 E12 +0.0045、E16 +0.0755）。
 # 关键的排前面，保证即使时间不够也先拿到核心对照。
-cd /root/autodl-tmp/BCP-Vis
+cd "<PROJECT_ROOT>"
 exec 200>/tmp/bcp_reeval.lock
 flock -n 200 || { echo "reeval 已在运行，退出"; exit 0; }
-source /root/miniconda3/etc/profile.d/conda.sh
+source "<CONDA_ROOT>/etc/profile.d/conda.sh"
 conda activate base
 LOG=logs/reeval_all_queue.log
 PROC=datasets/EVD4UAV_processed

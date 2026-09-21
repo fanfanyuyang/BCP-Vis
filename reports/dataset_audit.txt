@@ -2,7 +2,7 @@
 ========================================================================
 EVD4UAV 数据集审计报告
 ========================================================================
-root: /root/autodl-tmp/BCP-Vis/datasets/EVD4UAV/raw/EVD4UAV
+root: <PROJECT_ROOT>/datasets/EVD4UAV/raw/EVD4UAV
 模式: 只读，未修改任何原始文件
 
 ========================================================================
@@ -36,10 +36,10 @@ json: 1   txt: 18740   xml: 1
 5. 官方 metadata
 ========================================================================
 {
-  "dir": "/root/autodl-tmp/BCP-Vis/datasets/EVD4UAV/_official_metadata",
+  "dir": "<PROJECT_ROOT>/datasets/EVD4UAV/_official_metadata",
   "files": {
     "altitude_mapping": {
-      "path": "/root/autodl-tmp/BCP-Vis/datasets/EVD4UAV/_official_metadata/altitude_mapping.txt",
+      "path": "<PROJECT_ROOT>/datasets/EVD4UAV/_official_metadata/altitude_mapping.txt",
       "n_entries": 10048,
       "n_malformed_lines": 0,
       "altitude_distribution": {
@@ -57,7 +57,7 @@ json: 1   txt: 18740   xml: 1
       }
     },
     "snow_images.txt": {
-      "path": "/root/autodl-tmp/BCP-Vis/datasets/EVD4UAV/_official_metadata/snow_images.txt",
+      "path": "<PROJECT_ROOT>/datasets/EVD4UAV/_official_metadata/snow_images.txt",
       "n_entries": 3657,
       "n_unique": 3657,
       "sample": [
@@ -69,7 +69,7 @@ json: 1   txt: 18740   xml: 1
       ]
     },
     "non_snow_images.txt": {
-      "path": "/root/autodl-tmp/BCP-Vis/datasets/EVD4UAV/_official_metadata/non_snow_images.txt",
+      "path": "<PROJECT_ROOT>/datasets/EVD4UAV/_official_metadata/non_snow_images.txt",
       "n_entries": 6392,
       "n_unique": 6392,
       "sample": [

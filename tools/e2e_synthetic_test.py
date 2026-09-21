@@ -19,7 +19,7 @@ H, W = 1080, 1920
 rng = np.random.RandomState(0)
 
 
-def run(cmd, cwd="/root/autodl-tmp/BCP-Vis", check=True):
+def run(cmd, cwd="<PROJECT_ROOT>", check=True):
     print("\n$ " + " ".join(str(c) for c in cmd), flush=True)
     r = subprocess.run([str(c) for c in cmd], cwd=cwd,
                        capture_output=True, text=True)

@@ -4,10 +4,10 @@
 # v1 的教训：infer_prior 静默失败生成 0 个先验，E6 仍照常训练 5 小时，
 #            第4通道退化成全零（≡ E1），白白浪费一整轮。
 # v2 改进：每个关键步骤后校验产物数量，不达标立即中止并写 [ABORT]。
-cd /root/autodl-tmp/BCP-Vis
+cd "<PROJECT_ROOT>"
 exec 200>/tmp/bcp_v4pipe.lock
 flock -n 200 || { echo "pipeline already running, exit"; exit 0; }
-source /root/miniconda3/etc/profile.d/conda.sh
+source "<CONDA_ROOT>/etc/profile.d/conda.sh"
 conda activate base
 
 PROC=datasets/EVD4UAV_processed

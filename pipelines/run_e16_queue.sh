@@ -1,9 +1,9 @@
 #!/bin/bash
 # E16：ACPC —— 高度条件化的先验通道；等 E13b 完成后零空闲接手
-cd /root/autodl-tmp/BCP-Vis
+cd "<PROJECT_ROOT>"
 exec 200>/tmp/bcp_e16.lock
 flock -n 200 || { echo "E16 已在运行，退出"; exit 0; }
-source /root/miniconda3/etc/profile.d/conda.sh
+source "<CONDA_ROOT>/etc/profile.d/conda.sh"
 conda activate base
 LOG=logs/e16_queue.log
 echo "[$(date)] E16 队列启动，等 logs/e13b_queue.done" >> "$LOG"

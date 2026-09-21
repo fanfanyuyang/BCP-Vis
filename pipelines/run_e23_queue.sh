@@ -1,9 +1,9 @@
 #!/bin/bash
 # E23 = OOF 严谨性（5 折 cascade PriorNet；E5_OOF 口径：OOF 先验用于评测，单一最终 CNN）
-cd /root/autodl-tmp/BCP-Vis
+cd "<PROJECT_ROOT>"
 exec 200>/tmp/bcp_e23.lock
 flock -n 200 || { echo "E23 已在运行，退出"; exit 0; }
-source /root/miniconda3/etc/profile.d/conda.sh
+source "<CONDA_ROOT>/etc/profile.d/conda.sh"
 conda activate base
 LOG=logs/e23_queue.log
 echo "[$(date)] E23(OOF) 队列启动，等 logs/e22_queue.done" >> "$LOG"

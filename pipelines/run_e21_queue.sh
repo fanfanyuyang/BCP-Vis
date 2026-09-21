@@ -1,9 +1,9 @@
 #!/bin/bash
 # E21 = AASP（高度自适应软先验）：等 E17/E19/E20 全部完成后接手（resume_queue.done）
-cd /root/autodl-tmp/BCP-Vis
+cd "<PROJECT_ROOT>"
 exec 200>/tmp/bcp_e21.lock
 flock -n 200 || { echo "E21 已在运行，退出"; exit 0; }
-source /root/miniconda3/etc/profile.d/conda.sh
+source "<CONDA_ROOT>/etc/profile.d/conda.sh"
 conda activate base
 LOG=logs/e21_queue.log
 echo "[$(date)] E21(AASP) 队列启动，等 logs/resume_queue.done" >> "$LOG"

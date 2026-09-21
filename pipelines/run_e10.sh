@@ -1,9 +1,9 @@
 #!/bin/bash
 # E10：大容量对照（骨干翻倍、无专家结构）—— 论文容量排除项
-cd /root/autodl-tmp/BCP-Vis
+cd "<PROJECT_ROOT>"
 exec 200>/tmp/bcp_e10.lock
 flock -n 200 || { echo 'e10 already running'; exit 0; }
-source /root/miniconda3/etc/profile.d/conda.sh
+source "<CONDA_ROOT>/etc/profile.d/conda.sh"
 conda activate base
 PROC=datasets/EVD4UAV_processed
 RAW=datasets/EVD4UAV/raw/EVD4UAV

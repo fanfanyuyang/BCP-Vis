@@ -9,10 +9,10 @@
 #
 # 与 E12 唯一差异：PriorNet 的 height_mode moe -> film。
 # 训练目标为基线 soft prior（默认），下游 CNN 配置、损失、epochs、seed 全部与 E12 一致。
-cd /root/autodl-tmp/BCP-Vis
+cd "<PROJECT_ROOT>"
 exec 200>/tmp/bcp_e24.lock
 flock -n 200 || { echo "E24 已在运行，退出"; exit 0; }
-source /root/miniconda3/etc/profile.d/conda.sh
+source "<CONDA_ROOT>/etc/profile.d/conda.sh"
 conda activate base
 LOG=logs/e24_queue.log
 echo "[$(date)] E24(FiLM+背景头) 队列启动，等 logs/e23_queue.done" >> "$LOG"

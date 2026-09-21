@@ -13,8 +13,8 @@
 # 唯一区别是 first conv 的 in_channels 3 vs 4；
 # lr / epochs / batch / split / 增强 / seed 全部一致（由 yaml 保证）。
 # ============================================================
-cd /root/autodl-tmp/BCP-Vis
-source /root/miniconda3/etc/profile.d/conda.sh
+cd "<PROJECT_ROOT>"
+source "<CONDA_ROOT>/etc/profile.d/conda.sh"
 conda activate base
 
 PROC=datasets/EVD4UAV_processed

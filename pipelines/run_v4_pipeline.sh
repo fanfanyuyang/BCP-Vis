@@ -5,10 +5,10 @@
 #   2. 训练 E6（RGB + V4 高度先验）
 #   3. 评估 E6（含尺寸×高度交叉）
 #   4. 生成统一报告（含 V4 落地验证：tiny@90m 是否转正）
-cd /root/autodl-tmp/BCP-Vis
+cd "<PROJECT_ROOT>"
 exec 200>/tmp/bcp_v4pipe.lock
 flock -n 200 || { echo "pipeline already running, exit"; exit 0; }
-source /root/miniconda3/etc/profile.d/conda.sh
+source "<CONDA_ROOT>/etc/profile.d/conda.sh"
 conda activate base
 
 PROC=datasets/EVD4UAV_processed

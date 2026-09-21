@@ -16,8 +16,8 @@
 #
 # 单步失败不中断整条链。
 # ============================================================
-cd /root/autodl-tmp/BCP-Vis
-source /root/miniconda3/etc/profile.d/conda.sh
+cd "<PROJECT_ROOT>"
+source "<CONDA_ROOT>/etc/profile.d/conda.sh"
 conda activate base
 
 PROC=datasets/EVD4UAV_processed
@@ -47,7 +47,7 @@ python scripts/infer_prior.py \
     --out-dir "$PROC/oof_priors" --tile 1024 --overlap 192 \
     > logs/infer_prior_v3.log 2>&1 || echo "[FAIL] infer prior" | tee -a $CH.log
 echo "prior files: $(ls $PROC/oof_priors/*.png 2>/dev/null | wc -l)" | tee -a $CH.log
-df -h /root/autodl-tmp | tail -1 | tee -a $CH.log
+df -h <PROJECT_ROOT> | tail -1 | tee -a $CH.log
 
 run_eval () {
     local exp=$1 ckpt=$2 extra=$3 cfg=$4 tag=$5

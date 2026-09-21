@@ -3,10 +3,10 @@
 #
 # 背景：07:38 E24 下游因 train_final.py 的 --exp 白名单未含 E24 而报错退出（防假完成未写 done）。
 # 已用 _patch_e24.py 注册 E24；本脚本从"下游训练"这一步续跑，不重训 PriorNet、不重推理先验。
-cd /root/autodl-tmp/BCP-Vis
+cd "<PROJECT_ROOT>"
 exec 200>/tmp/bcp_e24r.lock
 flock -n 200 || { echo "E24 resume 已在运行，退出"; exit 0; }
-source /root/miniconda3/etc/profile.d/conda.sh
+source "<CONDA_ROOT>/etc/profile.d/conda.sh"
 conda activate base
 LOG=logs/e24_queue.log
 echo "[$(date)] E24 下游补跑启动（PriorNet 与 9371 张先验已就绪）" >> "$LOG"

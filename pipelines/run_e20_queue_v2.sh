@@ -1,9 +1,9 @@
 #!/bin/bash
 # E20 v2：若先验已在早跑阶段就绪则跳过推理（避免重复 1h GPU）
-cd /root/autodl-tmp/BCP-Vis
+cd "<PROJECT_ROOT>"
 exec 200>/tmp/bcp_e20.lock
 flock -n 200 || { echo "E20 已在运行，退出"; exit 0; }
-source /root/miniconda3/etc/profile.d/conda.sh
+source "<CONDA_ROOT>/etc/profile.d/conda.sh"
 conda activate base
 LOG=logs/e20_queue.log
 echo "[$(date)] E20 v2 队列启动，等 logs/e17e19_queue.done" >> "$LOG"

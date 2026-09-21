@@ -1,10 +1,10 @@
 #!/bin/bash
 # E28：双专家先验融合（5ch，RGB + P_film + P_moe）。等 E26 完成后接手（串行保持 GPU 满载）。
 # 两个先验均已训好 ⇒ 只训下游，成本最低、直接回答"最好组合"。
-cd /root/autodl-tmp/BCP-Vis
+cd "<PROJECT_ROOT>"
 exec 200>/tmp/bcp_e28.lock
 flock -n 200 || { echo "E28 已在运行，退出"; exit 0; }
-source /root/miniconda3/etc/profile.d/conda.sh
+source "<CONDA_ROOT>/etc/profile.d/conda.sh"
 conda activate base
 LOG=logs/e28_queue.log
 echo "[$(date)] E28(双专家融合5ch) 队列启动，等 logs/e26_queue.done" >> "$LOG"

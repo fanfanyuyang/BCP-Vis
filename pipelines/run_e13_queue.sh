@@ -13,10 +13,10 @@
 #
 # 成本：不需重训 PriorNet（复用 V8 的 ckpt），只改先验组合方式。
 # ============================================================
-cd /root/autodl-tmp/BCP-Vis
+cd "<PROJECT_ROOT>"
 exec 200>/tmp/bcp_e13.lock
 flock -n 200 || { echo "e13 already running, exit"; exit 0; }
-source /root/miniconda3/etc/profile.d/conda.sh
+source "<CONDA_ROOT>/etc/profile.d/conda.sh"
 conda activate base
 
 PROC=datasets/EVD4UAV_processed

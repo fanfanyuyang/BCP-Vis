@@ -5,10 +5,10 @@
 #   3. 推理先验：P = P_f ⊙ (1 - P_b)（"是目标 且 不是背景"）
 #   4. 训 E8（RGB + 双分支先验，4 通道，与 E5/E6 同架构只换先验）
 #   5. 评估 E8 + 生成报告
-cd /root/autodl-tmp/BCP-Vis
+cd "<PROJECT_ROOT>"
 exec 200>/tmp/bcp_v5.lock
 flock -n 200 || { echo "v5 pipeline already running, exit"; exit 0; }
-source /root/miniconda3/etc/profile.d/conda.sh
+source "<CONDA_ROOT>/etc/profile.d/conda.sh"
 conda activate base
 
 PROC=datasets/EVD4UAV_processed

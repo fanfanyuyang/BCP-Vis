@@ -7,10 +7,10 @@
 #     否则                                ⇒ height_mode = film
 #   脚本自动比较并改写配置，无需人工介入。
 # ============================================================
-cd /root/autodl-tmp/BCP-Vis
+cd "<PROJECT_ROOT>"
 exec 200>/tmp/bcp_e12.lock
 flock -n 200 || { echo "e12 already running, exit"; exit 0; }
-source /root/miniconda3/etc/profile.d/conda.sh
+source "<CONDA_ROOT>/etc/profile.d/conda.sh"
 conda activate base
 
 PROC=datasets/EVD4UAV_processed

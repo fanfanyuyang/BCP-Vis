@@ -8,10 +8,10 @@
 #
 # 排队：等 E9/E10 补跑（fix_e9_e10）结束后自动开始
 # ============================================================
-cd /root/autodl-tmp/BCP-Vis
+cd "<PROJECT_ROOT>"
 exec 200>/tmp/bcp_e11.lock
 flock -n 200 || { echo "e11 queue already running, exit"; exit 0; }
-source /root/miniconda3/etc/profile.d/conda.sh
+source "<CONDA_ROOT>/etc/profile.d/conda.sh"
 conda activate base
 
 PROC=datasets/EVD4UAV_processed

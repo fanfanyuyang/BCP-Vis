@@ -1,9 +1,9 @@
 #!/bin/bash
 # E22 = 双尺度先验通道；等 E21 完成后接手
-cd /root/autodl-tmp/BCP-Vis
+cd "<PROJECT_ROOT>"
 exec 200>/tmp/bcp_e22.lock
 flock -n 200 || { echo "E22 已在运行，退出"; exit 0; }
-source /root/miniconda3/etc/profile.d/conda.sh
+source "<CONDA_ROOT>/etc/profile.d/conda.sh"
 conda activate base
 LOG=logs/e22_queue.log
 echo "[$(date)] E22 队列启动，等 logs/e21_queue.done" >> "$LOG"

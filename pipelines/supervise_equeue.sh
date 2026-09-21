@@ -8,7 +8,7 @@
 #   - 同一实验 10 分钟内最多重拉一次，避免崩溃循环刷屏。
 #
 # 用法： setsid nohup bash supervise_equeue.sh >/dev/null 2>&1 </dev/null &
-cd /root/autodl-tmp/BCP-Vis
+cd "<PROJECT_ROOT>"
 LOG=logs/supervise.log
 echo "[$(date)] supervisor 启动 (pid $$)" >> "$LOG"
 

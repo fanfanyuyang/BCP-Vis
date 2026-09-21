@@ -3,10 +3,10 @@
 #   E18 错位先验因果对照（eval-only，最快，先跑）
 #   E17 logit 证据融合先验（infer + train + eval）
 #   E19 先验一致性正则（train + eval）
-cd /root/autodl-tmp/BCP-Vis
+cd "<PROJECT_ROOT>"
 exec 200>/tmp/bcp_e17e19.lock
 flock -n 200 || { echo "e17e19 队列已在运行，退出"; exit 0; }
-source /root/miniconda3/etc/profile.d/conda.sh
+source "<CONDA_ROOT>/etc/profile.d/conda.sh"
 conda activate base
 LOG=logs/e17e19_queue.log
 echo "[$(date)] E17/E18/E19 队列启动，等 logs/e16_queue.done" >> "$LOG"

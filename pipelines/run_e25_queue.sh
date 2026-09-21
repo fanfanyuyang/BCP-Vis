@@ -2,10 +2,10 @@
 # E25 = V8 级联 + FiLM 高度条件 + 无背景头（lambda_bg=0）。
 # 立即启动：与 E24 下游并行，利用当前 GPU 余量（带宽 74%、功耗 76%、显存剩 15G）。
 # 与 E24 唯一差异 = lambda_bg 1.0 -> 0.0 ⇒ 干净隔离"背景头"的独立贡献（创新点②缺口）。
-cd /root/autodl-tmp/BCP-Vis
+cd "<PROJECT_ROOT>"
 exec 200>/tmp/bcp_e25.lock
 flock -n 200 || { echo "E25 已在运行，退出"; exit 0; }
-source /root/miniconda3/etc/profile.d/conda.sh
+source "<CONDA_ROOT>/etc/profile.d/conda.sh"
 conda activate base
 LOG=logs/e25_queue.log
 echo "[$(date)] E25(FiLM 无背景头) 队列启动，等 logs/e24_queue.done（串行以保持 GPU 满载）" >> "$LOG"

@@ -1,10 +1,10 @@
 #!/bin/bash
 # E29：专家分歧不确定性（P* = (1-|P_film-P_moe|) * P_film）。等 E28 完成后接手。
 # 零额外 PriorNet 训练：合成分歧先验 ⇒ 只训下游。这是"UAP 的正确做法"。
-cd /root/autodl-tmp/BCP-Vis
+cd "<PROJECT_ROOT>"
 exec 200>/tmp/bcp_e29.lock
 flock -n 200 || { echo "E29 已在运行，退出"; exit 0; }
-source /root/miniconda3/etc/profile.d/conda.sh
+source "<CONDA_ROOT>/etc/profile.d/conda.sh"
 conda activate base
 LOG=logs/e29_queue.log
 echo "[$(date)] E29(专家分歧不确定性) 队列启动，等 logs/e28_queue.done" >> "$LOG"

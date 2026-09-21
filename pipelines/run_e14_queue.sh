@@ -9,10 +9,10 @@
 #
 # 【幂等】若并行任务(run_e14_parallel.sh)已完成 E14，则本脚本全部跳过。
 # ============================================================
-cd /root/autodl-tmp/BCP-Vis
+cd "<PROJECT_ROOT>"
 exec 200>/tmp/bcp_e14.lock
 flock -n 200 || { echo "e14 already running, exit"; exit 0; }
-source /root/miniconda3/etc/profile.d/conda.sh
+source "<CONDA_ROOT>/etc/profile.d/conda.sh"
 conda activate base
 
 PROC=datasets/EVD4UAV_processed

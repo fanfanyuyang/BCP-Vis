@@ -9,8 +9,8 @@
 #   训练   metrics.csv 行数-1 >= $EPOCHS 且 best.pth 存在
 #   先验   oof_priors/*.png 数量 >= split.csv 行数 * 0.98
 # ============================================================
-cd /root/autodl-tmp/BCP-Vis
-source /root/miniconda3/etc/profile.d/conda.sh
+cd "<PROJECT_ROOT>"
+source "<CONDA_ROOT>/etc/profile.d/conda.sh"
 conda activate base
 
 PROC=datasets/EVD4UAV_processed
@@ -75,7 +75,7 @@ if [ "$NHAVE" -lt $((NTARGET * 98 / 100)) ]; then
 else
     log "SKIP infer prior（已齐全）"
 fi
-df -h /root/autodl-tmp | tail -1 | tee -a $CH.log
+df -h <PROJECT_ROOT> | tail -1 | tee -a $CH.log
 
 # ---------- 1) 主实验 ----------
 run_train E0_rgb     E0 configs/rgb_baseline.yaml runs/rgb_baseline/E0_rgb ""

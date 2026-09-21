@@ -11,8 +11,8 @@
 # ============================================================
 set -euo pipefail
 
-cd /root/autodl-tmp/BCP-Vis
-source /root/miniconda3/etc/profile.d/conda.sh
+cd "<PROJECT_ROOT>"
+source "<CONDA_ROOT>/etc/profile.d/conda.sh"
 conda activate base
 
 PROC=datasets/EVD4UAV_processed

@@ -59,4 +59,4 @@
 ## 7. 说明
 
 - 本巡检仅读取服务器状态、未修改/运行任何训练或文件。
-- 数据源：`/root/autodl-tmp/BCP-Vis/reports/{final_metrics,by_size,by_size_altitude,by_altitude}.csv`
+- 数据源：`<PROJECT_ROOT>/reports/{final_metrics,by_size,by_size_altitude,by_altitude}.csv`

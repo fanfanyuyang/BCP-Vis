@@ -12,8 +12,8 @@
 #   已验证：零初始化 FiLM 下 50m/90m 输出差 = 0（初始恒等），
 #          扰动 gamma 后差 = 5.86e-02（高度条件生效）
 # ============================================================
-cd /root/autodl-tmp/BCP-Vis
-source /root/miniconda3/etc/profile.d/conda.sh
+cd "<PROJECT_ROOT>"
+source "<CONDA_ROOT>/etc/profile.d/conda.sh"
 conda activate base
 
 PROC=datasets/EVD4UAV_processed

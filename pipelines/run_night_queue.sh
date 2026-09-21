@@ -10,10 +10,10 @@
 # E10 的意义：它的参数量【大于】MoE 版，却没有专家结构。
 #   若 E9 胜出 ⇒ 增益来自专家结构而非堆参数 ⇒ 论文结论才立得住
 # ============================================================
-cd /root/autodl-tmp/BCP-Vis
+cd "<PROJECT_ROOT>"
 exec 200>/tmp/bcp_night.lock
 flock -n 200 || { echo "night queue already running, exit"; exit 0; }
-source /root/miniconda3/etc/profile.d/conda.sh
+source "<CONDA_ROOT>/etc/profile.d/conda.sh"
 conda activate base
 
 PROC=datasets/EVD4UAV_processed

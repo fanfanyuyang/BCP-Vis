@@ -2,10 +2,10 @@
 # E26 = V8 级联 + MoE 高度条件 + 无背景头（lambda_bg=0）。
 # 与 E12(moe+有背景头)、E24(film+有背景头)、E25(film+无背景头) 构成 2×2 因子消融。
 # 触发：等 E24 或 E25 任一完成（释放 GPU 配额）即接手，保持 GPU 不空转。
-cd /root/autodl-tmp/BCP-Vis
+cd "<PROJECT_ROOT>"
 exec 200>/tmp/bcp_e26.lock
 flock -n 200 || { echo "E26 已在运行，退出"; exit 0; }
-source /root/miniconda3/etc/profile.d/conda.sh
+source "<CONDA_ROOT>/etc/profile.d/conda.sh"
 conda activate base
 LOG=logs/e26_queue.log
 echo "[$(date)] E26(MoE 无背景头) 队列启动，等 logs/e25_queue.done（串行以保持 GPU 满载）" >> "$LOG"

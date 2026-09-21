@@ -5,8 +5,8 @@
 #
 # 用法： bash scripts/auto_analyze.sh E5 runs/bcp_vis/E5_bcp 40
 # ============================================================
-cd /root/autodl-tmp/BCP-Vis
-source /root/miniconda3/etc/profile.d/conda.sh
+cd "<PROJECT_ROOT>"
+source "<CONDA_ROOT>/etc/profile.d/conda.sh"
 conda activate base
 
 TAG=$1

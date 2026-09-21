@@ -1,10 +1,10 @@
 #!/bin/bash
 # E33：③（不确定性融合）的公平重测 —— 健康基准(priors_v4) + 尺度归一化分歧。
 # 等 E32 完成后接手，串行不抢卡。合成用 CPU，随后只训下游。
-cd /root/autodl-tmp/BCP-Vis
+cd "<PROJECT_ROOT>"
 exec 200>/tmp/bcp_e33.lock
 flock -n 200 || { echo "E33 已在运行，退出"; exit 0; }
-source /root/miniconda3/etc/profile.d/conda.sh
+source "<CONDA_ROOT>/etc/profile.d/conda.sh"
 conda activate base
 LOG=logs/e33_queue.log
 echo "[$(date)] E33(③公平重测) 队列启动，等 logs/e32_queue.done" >> "$LOG"
